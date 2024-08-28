@@ -1,0 +1,64 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Personal Page',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: PersonalPage(),
+    );
+  }
+}
+
+class PersonalPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('My Personal Page'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            CircleAvatar(
+              radius: 150.0,
+              backgroundImage: NetworkImage(
+                  'https://th.bing.com/th/id/OIP.iJLNc5zS3X1naZhCIJyvRwHaEK?rs=1&pid=ImgDetMain'),
+            ),
+            SizedBox(height: 20.0),
+            Text(
+              'vbc',
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'TBP',
+              style: TextStyle(
+                fontSize: 16.0,
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(Icons.location_on),
+                Text('VKU'),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
